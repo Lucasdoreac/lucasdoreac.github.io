@@ -5,5 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: '',
-  trailingSlash: true,
+  assetPrefix: './',
 }
+
+export default nextConfig
