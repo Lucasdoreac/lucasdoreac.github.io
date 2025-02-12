@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Dórea Cardoso - Portfólio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <meta name="description" content="Portfólio profissional de Lucas Dórea Cardoso - Desenvolvedor de Software e Especialista em Soluções Sustentáveis">
 </head>
 <body class="bg-gray-100">
     <nav class="bg-gray-800 text-white p-4 sticky top-0 z-50">
@@ -15,7 +14,7 @@
             <a href="/" class="text-xl font-bold">Lucas Dórea Cardoso</a>
             <div class="space-x-4">
                 <a href="/#about" class="hover:text-gray-300">Sobre</a>
-                <a href="/portfolio" class="hover:text-gray-300">Portfólio</a>
+                <a href="/projects" class="hover:text-gray-300">Projetos</a>
                 <a href="/experience" class="hover:text-gray-300">Experiência</a>
                 <a href="/education" class="hover:text-gray-300">Formação</a>
                 <a href="/skills" class="hover:text-gray-300">Habilidades</a>
@@ -25,8 +24,94 @@
     </nav>
 
     <main class="container mx-auto mt-8 px-4">
-        <!-- Mesmo conteúdo do index.html anterior, apenas atualizando os links -->
-        ...
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg shadow-lg">
+            <h2 class="text-4xl font-bold mb-4">Desenvolvedor de Software & Especialista em Soluções Sustentáveis</h2>
+            <p class="text-xl mb-8">Transformando ideias em soluções tecnológicas sustentáveis</p>
+            <div class="space-x-4">
+                <a href="/projects" class="bg-white text-blue-600 px-6 py-2 rounded hover:bg-gray-100 transition duration-300">
+                    Ver Projetos
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-6 py-2 rounded hover:bg-white hover:text-blue-600 transition duration-300">
+                    Contato
+                </a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="quick-skills" class="py-16">
+            <h3 class="text-2xl font-bold mb-8">Habilidades</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/skills#programming" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-3xl text-blue-600 mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Desenvolvimento</h4>
+                    <p class="text-gray-600">C, Java, Python</p>
+                </a>
+                
+                <a href="/skills#databases" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-3xl text-green-600 mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Banco de Dados</h4>
+                    <p class="text-gray-600">SQL, Modelagem</p>
+                </a>
+                
+                <a href="/skills#os" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-3xl text-purple-600 mb-4">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Sistemas</h4>
+                    <p class="text-gray-600">Linux, Windows Server</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16">
+            <h3 class="text-2xl font-bold mb-8">Contato</h3>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold mb-4">Informações de Contato</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-map-marker-alt text-red-600"></i>
+                                <span>QE 01 Conjunto M Casa 35, Guará I - Brasília/DF</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-phone text-green-600"></i>
+                                <span>(61) 99358-0909</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                                <a href="mailto:lucasdorea.c@outlook.com" class="hover:text-blue-600">
+                                    lucasdorea.c@outlook.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Redes Sociais</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fab fa-linkedin text-blue-600"></i>
+                                <a href="https://linkedin.com/in/lucas-dórea-cardoso-771833112" target="_blank" class="hover:text-blue-600">
+                                    LinkedIn
+                                </a>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fab fa-github text-gray-800"></i>
+                                <a href="https://github.com/Lucasdoreac" target="_blank" class="hover:text-gray-800">
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-gray-800 text-white py-8 mt-16">
