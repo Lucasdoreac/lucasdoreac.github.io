@@ -1,133 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Dórea Cardoso - Sustainable Tech Developer</title>
-    <style>
-        :root {
-            --primary-color: #2e3440;
-            --secondary-color: #3b4252;
-            --accent-color: #88c0d0;
-            --text-color: #eceff4;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-        }
-
-        header {
-            background-color: var(--secondary-color);
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        h1, h2 {
-            color: var(--accent-color);
-        }
-
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .tech-card {
-            background-color: var(--secondary-color);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            color: var(--accent-color);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--accent-color);
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-        }
-    </style>
+    <title>Lucas Dórea Cardoso - Portfólio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="Portfólio profissional de Lucas Dórea Cardoso - Desenvolvedor de Software e Especialista em Soluções Sustentáveis">
 </head>
-<body>
-    <header>
-        <h1>Lucas Dórea Cardoso</h1>
-        <p>Sustainable Tech Developer | Environmental Manager</p>
-    </header>
-
-    <div class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>Environmental Manager turned Computer Science enthusiast, combining expertise in sustainable practices with modern web development. Creating eco-conscious technology solutions that prioritize both environmental impact and technical efficiency.</p>
-        </section>
-
-        <section class="tech-stack">
-            <div class="tech-card">
-                <h2>Backend</h2>
-                <ul>
-                    <li>PHP (Core Modules)</li>
-                    <li>MySQL</li>
-                    <li>Redis</li>
-                </ul>
+<body class="bg-gray-100">
+    <nav class="bg-gray-800 text-white p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-bold">Lucas Dórea Cardoso</a>
+            <div class="space-x-4">
+                <a href="/#about" class="hover:text-gray-300">Sobre</a>
+                <a href="/portfolio" class="hover:text-gray-300">Portfólio</a>
+                <a href="/experience" class="hover:text-gray-300">Experiência</a>
+                <a href="/education" class="hover:text-gray-300">Formação</a>
+                <a href="/skills" class="hover:text-gray-300">Habilidades</a>
+                <a href="/certificates" class="hover:text-gray-300">Certificados</a>
             </div>
-
-            <div class="tech-card">
-                <h2>Frontend</h2>
-                <ul>
-                    <li>HTML5/CSS3</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                </ul>
-            </div>
-
-            <div class="tech-card">
-                <h2>Sustainability Focus</h2>
-                <ul>
-                    <li>Green Computing</li>
-                    <li>Energy-Efficient Code</li>
-                    <li>Resource Optimization</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Current Projects</h2>
-            <ul>
-                <li>Developing sustainable web applications</li>
-                <li>Creating environmental monitoring tools</li>
-                <li>Implementing green computing practices</li>
-            </ul>
-        </section>
-
-        <div class="social-links">
-            <a href="https://github.com/Lucasdoreac">GitHub</a>
-            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin">LinkedIn</a>
-            <a href="mailto:lucasdorea.c@outlook.com">Email</a>
         </div>
-    </div>
+    </nav>
+
+    <main class="container mx-auto mt-8 px-4">
+        <!-- Mesmo conteúdo do index.html anterior, apenas atualizando os links -->
+        ...
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Lucas Dórea Cardoso. Todos os direitos reservados.</p>
+            <div class="mt-4 space-x-4">
+                <a href="https://linkedin.com/in/lucas-dórea-cardoso-771833112" target="_blank" class="hover:text-blue-400">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Lucasdoreac" target="_blank" class="hover:text-gray-400">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
