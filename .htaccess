@@ -1,0 +1,27 @@
+RewriteEngine On
+
+# Remover extensão .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Redirecionar /curriculum-vitae para /
+RewriteRule ^curriculum-vitae/?$ / [R=301,L]
+RewriteRule ^curriculum-vitae/(.*)$ /$1 [R=301,L]
+
+# Página de erro 404 personalizada
+ErrorDocument 404 /404.html
+
+# Headers de segurança
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set X-XSS-Protection "1; mode=block"
+
+# Cache Control
+<FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+</FilesMatch>
+
+<FilesMatch "\.(css|js)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
