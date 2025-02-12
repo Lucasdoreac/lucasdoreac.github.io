@@ -1,133 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Dórea Cardoso - Sustainable Tech Developer</title>
-    <style>
-        :root {
-            --primary-color: #2e3440;
-            --secondary-color: #3b4252;
-            --accent-color: #88c0d0;
-            --text-color: #eceff4;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-        }
-
-        header {
-            background-color: var(--secondary-color);
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        h1, h2 {
-            color: var(--accent-color);
-        }
-
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .tech-card {
-            background-color: var(--secondary-color);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            color: var(--accent-color);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--accent-color);
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-        }
-    </style>
+    <title>Lucas Dórea Cardoso - Estudante de Ciência da Computação</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Lucas Dórea Cardoso</h1>
-        <p>Sustainable Tech Developer | Environmental Manager</p>
-    </header>
-
-    <div class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>Environmental Manager turned Computer Science enthusiast, combining expertise in sustainable practices with modern web development. Creating eco-conscious technology solutions that prioritize both environmental impact and technical efficiency.</p>
-        </section>
-
-        <section class="tech-stack">
-            <div class="tech-card">
-                <h2>Backend</h2>
-                <ul>
-                    <li>PHP (Core Modules)</li>
-                    <li>MySQL</li>
-                    <li>Redis</li>
-                </ul>
+<body class="bg-gray-100">
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-bold">Lucas Dórea Cardoso</a>
+            <div class="space-x-4">
+                <a href="#about" class="hover:text-gray-300">Sobre</a>
+                <a href="#learning" class="hover:text-gray-300">Aprendizado</a>
+                <a href="#projects" class="hover:text-gray-300">Projetos</a>
+                <a href="#contact" class="hover:text-gray-300">Contato</a>
             </div>
-
-            <div class="tech-card">
-                <h2>Frontend</h2>
-                <ul>
-                    <li>HTML5/CSS3</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                </ul>
-            </div>
-
-            <div class="tech-card">
-                <h2>Sustainability Focus</h2>
-                <ul>
-                    <li>Green Computing</li>
-                    <li>Energy-Efficient Code</li>
-                    <li>Resource Optimization</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Current Projects</h2>
-            <ul>
-                <li>Developing sustainable web applications</li>
-                <li>Creating environmental monitoring tools</li>
-                <li>Implementing green computing practices</li>
-            </ul>
-        </section>
-
-        <div class="social-links">
-            <a href="https://github.com/Lucasdoreac">GitHub</a>
-            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin">LinkedIn</a>
-            <a href="mailto:lucasdorea.c@outlook.com">Email</a>
         </div>
-    </div>
+    </nav>
+
+    <main class="container mx-auto mt-8 px-4">
+        <!-- Hero Section -->
+        <section id="about" class="text-center py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg shadow-lg">
+            <h2 class="text-4xl font-bold mb-4">Estudante & Entusiasta de Tecnologia</h2>
+            <p class="text-xl mb-8">Aprendendo e crescendo na jornada do desenvolvimento de software</p>
+            <div class="max-w-2xl mx-auto text-left bg-white/10 p-6 rounded-lg">
+                <p class="mb-4">👋 Olá! Sou estudante do 3º semestre de Ciência da Computação no UDF Centro Universitário.</p>
+                <p class="mb-4">🌱 Estou no começo da minha jornada em tecnologia, aprendendo:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Fundamentos de Programação (C, Java, Python)</li>
+                    <li>Estruturas de Dados</li>
+                    <li>Lógica de Programação</li>
+                </ul>
+                <p>🤖 Uso ferramentas de IA para auxiliar meu aprendizado e desenvolvimento</p>
+            </div>
+        </section>
+
+        <!-- Learning Journey -->
+        <section id="learning" class="mt-16">
+            <h3 class="text-2xl font-bold mb-6">Minha Jornada de Aprendizado</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold mb-4 flex items-center">
+                        <i class="fas fa-book-open text-blue-600 mr-2"></i>
+                        Atualmente Estudando
+                    </h4>
+                    <ul class="space-y-2">
+                        <li>• Algoritmos e Estruturas de Dados</li>
+                        <li>• Programação Orientada a Objetos</li>
+                        <li>• Banco de Dados</li>
+                        <li>• Conceitos de Redes</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold mb-4 flex items-center">
+                        <i class="fas fa-tools text-green-600 mr-2"></i>
+                        Ferramentas de Apoio
+                    </h4>
+                    <ul class="space-y-2">
+                        <li>• IDEs & Editores de Código</li>
+                        <li>• Ferramentas de IA (Claude, ChatGPT, MCP)</li>
+                        <li>• Recursos online & documentação</li>
+                        <li>• Comunidades de desenvolvedores</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos de Estudo -->
+        <section id="projects" class="mt-16">
+            <h3 class="text-2xl font-bold mb-6">Projetos de Aprendizado</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Projeto 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-calculator text-purple-600 text-2xl mr-4"></i>
+                        <div>
+                            <h4 class="text-xl font-bold">Calculadora Web</h4>
+                            <p class="text-gray-600">Projeto de estudo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Meu primeiro projeto web, desenvolvido para aprender os fundamentos de HTML, CSS e JavaScript.
+                        Disponível em: <a href="https://calculadora.luaraujo.com" class="text-blue-600 hover:underline">calculadora.luaraujo.com</a>
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">HTML</span>
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">CSS</span>
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-code text-blue-600 text-2xl mr-4"></i>
+                        <div>
+                            <h4 class="text-xl font-bold">Estruturas de Dados</h4>
+                            <p class="text-gray-600">Exercícios práticos</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Implementações de estruturas básicas como listas, pilhas e filas em C.
+                        Parte do meu aprendizado na faculdade.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">C</span>
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Algoritmos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contact" class="mt-16">
+            <h3 class="text-2xl font-bold mb-6">Contato</h3>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="mb-6 text-center">
+                    <p class="text-gray-700">
+                        Sempre aberto a trocar conhecimento e aprender com outros desenvolvedores!
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold mb-4">Informações</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                                <a href="mailto:lucasdorea.c@outlook.com" class="hover:text-blue-600">
+                                    lucasdorea.c@outlook.com
+                                </a>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-map-marker-alt text-red-600"></i>
+                                <span>Brasília/DF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Redes</h4>
+                        <div class="space-y-4">
+                            <a href="https://linkedin.com/in/lucas-dórea-cardoso-771833112" 
+                               target="_blank"
+                               class="flex items-center space-x-2 hover:text-blue-600">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/Lucasdoreac" 
+                               target="_blank"
+                               class="flex items-center space-x-2 hover:text-gray-800">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p>Estudante de Ciência da Computação | Em constante aprendizado</p>
+            <p class="mt-2 text-sm text-gray-400">
+                Este site foi desenvolvido como parte do meu processo de aprendizado,
+                com auxílio de ferramentas de IA e mentoria de desenvolvedores mais experientes.
+            </p>
+            <div class="mt-4">
+                <p>&copy; 2024 Lucas Dórea Cardoso</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
