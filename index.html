@@ -3,39 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Dórea Cardoso - Estudante de Ciência da Computação</title>
+    <title>Lucas Dórea Cardoso - Portfólio de Ciência da Computação</title>
+    <meta name="description" content="Portfólio pessoal de Lucas Dórea Cardoso, estudante de Ciência da Computação, mostrando projetos, habilidades e jornada de aprendizado em tecnologia.">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
-    <nav class="bg-gray-800 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-bold">Lucas Dórea Cardoso</a>
-            <div class="space-x-4">
-                <a href="#about" class="hover:text-gray-300">Sobre</a>
-                <a href="#learning" class="hover:text-gray-300">Aprendizado</a>
-                <a href="#projects" class="hover:text-gray-300">Projetos</a>
-                <a href="#contact" class="hover:text-gray-300">Contato</a>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-gray-800 text-white">
+        <nav class="container mx-auto p-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-xl font-bold">Lucas Dórea Cardoso</a>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#about" class="hover:text-gray-300">Sobre</a>
+                    <a href="#learning" class="hover:text-gray-300">Aprendizado</a>
+                    <a href="#projects" class="hover:text-gray-300">Projetos</a>
+                    <a href="#contact" class="hover:text-gray-300">Contato</a>
+                </div>
+                <!-- Mobile Menu Button (optional, if you want a mobile menu) -->
+                <!-- <button class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path v-if="!isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M4 6H20V8H4V6ZM4 11H20V13H4V11ZM4 16H20V18H4V16Z" />
+                        <path v-if="isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M6.707 5.293a1 1 0 011.414 0L12 10.586l3.879-3.879a1 1 0 111.414 1.414L13.414 12l3.879 3.879a1 1 0 01-1.414 1.414L12 13.414l-3.879 3.879a1 1 0 01-1.414-1.414L10.586 12 6.707 8.121a1 1 0 010-1.414z" />
+                    </svg>
+                </button> -->
             </div>
-        </div>
-    </nav>
+            <!-- Mobile Menu (hidden by default) -->
+            <!-- <div class="md:hidden" v-if="isOpen">
+                <a href="#about" class="block py-2 hover:text-gray-300">Sobre</a>
+                <a href="#learning" class="block py-2 hover:text-gray-300">Aprendizado</a>
+                <a href="#projects" class="block py-2 hover:text-gray-300">Projetos</a>
+                <a href="#contact" class="block py-2 hover:text-gray-300">Contato</a>
+            </div> -->
+        </nav>
+    </header>
 
     <main class="container mx-auto mt-8 px-4">
         <!-- Hero Section -->
-        <section id="about" class="text-center py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg shadow-lg">
-            <h2 class="text-4xl font-bold mb-4">Estudante & Entusiasta de Tecnologia</h2>
-            <p class="text-xl mb-8">Aprendendo e crescendo na jornada do desenvolvimento de software</p>
-            <div class="max-w-2xl mx-auto text-left bg-white/10 p-6 rounded-lg">
-                <p class="mb-4">👋 Olá! Sou estudante do 3º semestre de Ciência da Computação no UDF Centro Universitário.</p>
-                <p class="mb-4">🌱 Estou no começo da minha jornada em tecnologia, aprendendo:</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Fundamentos de Programação (C, Java, Python)</li>
-                    <li>Estruturas de Dados</li>
-                    <li>Lógica de Programação</li>
-                </ul>
-                <p>🤖 Uso ferramentas de IA para auxiliar meu aprendizado e desenvolvimento</p>
+        <section id="about" class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg shadow-lg">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold mb-4">Olá, eu sou o Lucas!</h2>
+                <p class="text-xl mb-8">Estudante de Ciência da Computação & Entusiasta de Tecnologia</p>
             </div>
+            <article class="max-w-2xl mx-auto text-left bg-white/10 p-6 rounded-lg">
+                <p class="mb-4">👋 Seja bem-vindo ao meu portfólio! Sou estudante do 3º semestre de Ciência da Computação no UDF Centro Universitário, em Brasília/DF.</p>
+                <p class="mb-4">🌱 Estou no início da minha jornada no mundo da tecnologia, dedicando-me a aprender e aprimorar minhas habilidades em:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Fundamentos de Programação: C, Java, Python</li>
+                    <li>Estruturas de Dados e Algoritmos</li>
+                    <li>Lógica de Programação e Pensamento Computacional</li>
+                </ul>
+                <p>🤖 Curioso e proativo, utilizo ferramentas de Inteligência Artificial como aliadas no meu aprendizado e desenvolvimento, buscando sempre aprimorar minha eficiência e expandir meus conhecimentos.</p>
+            </article>
         </section>
 
         <!-- Learning Journey -->
@@ -45,26 +64,29 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h4 class="font-bold mb-4 flex items-center">
                         <i class="fas fa-book-open text-blue-600 mr-2"></i>
-                        Atualmente Estudando
+                        Aprendizado Ativo
                     </h4>
-                    <ul class="space-y-2">
-                        <li>• Algoritmos e Estruturas de Dados</li>
-                        <li>• Programação Orientada a Objetos</li>
-                        <li>• Banco de Dados</li>
-                        <li>• Conceitos de Redes</li>
+                    <p class="mb-3">Disciplinas e temas que estou estudando atualmente para construir uma base sólida em Ciência da Computação:</p>
+                    <ul class="space-y-2 list-disc list-inside">
+                        <li>Algoritmos e Estruturas de Dados Avançadas</li>
+                        <li>Programação Orientada a Objetos em Java</li>
+                        <li>Modelagem e Gerenciamento de Banco de Dados SQL</li>
+                        <li>Fundamentos e Protocolos de Redes de Computadores</li>
                     </ul>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h4 class="font-bold mb-4 flex items-center">
                         <i class="fas fa-tools text-green-600 mr-2"></i>
-                        Ferramentas de Apoio
+                        Ferramentas e Recursos
                     </h4>
-                    <ul class="space-y-2">
-                        <li>• IDEs & Editores de Código</li>
-                        <li>• Ferramentas de IA para aprendizado</li>
-                        <li>• Recursos online & documentação</li>
-                        <li>• Comunidades de desenvolvedores</li>
+                    <p class="mb-3">Ferramentas e recursos que utilizo para otimizar meu aprendizado e desenvolvimento prático:</p>
+                    <ul class="space-y-2 list-disc list-inside">
+                        <li>IDEs e Editores de Código: VSCode, IntelliJ IDEA, Eclipse</li>
+                        <li>Ferramentas de IA para Aprendizado: ChatGPT, Gemini</li>
+                        <li>Plataformas de Aprendizado Online: Coursera, Udemy, DIO</li>
+                        <li>Comunidades e Fóruns de Desenvolvedores: Stack Overflow, GitHub</li>
+                        <li>Documentação Oficial e Recursos da Web</li>
                     </ul>
                 </div>
             </div>
@@ -72,61 +94,63 @@
 
         <!-- Projetos de Estudo -->
         <section id="projects" class="mt-16">
-            <h3 class="text-2xl font-bold mb-6">Projetos de Aprendizado</h3>
+            <h3 class="text-2xl font-bold mb-6">Projetos de Aprendizado & Prática</h3>
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Projeto 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                <article class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-calculator text-purple-600 text-2xl mr-4"></i>
                         <div>
-                            <h4 class="text-xl font-bold">Calculadora Web</h4>
-                            <p class="text-gray-600">Projeto de estudo</p>
+                            <h4 class="text-xl font-bold">Calculadora Web Simples</h4>
+                            <p class="text-gray-600">Projeto de estudo para web</p>
                         </div>
                     </div>
                     <p class="text-gray-700 mb-4">
-                        Meu primeiro projeto web, desenvolvido para aprender os fundamentos de HTML, CSS e JavaScript.
-                        Disponível em: <a href="https://calculadora.luaraujo.com" class="text-blue-600 hover:underline">calculadora.luaraujo.com</a>
+                        Meu primeiro projeto web, desenvolvido para solidificar os fundamentos de HTML, CSS e JavaScript.
+                        Uma calculadora funcional e responsiva, ideal para praticar a manipulação do DOM e lógica de programação front-end.
+                        Disponível em: <a href="https://calculadora.luaraujo.com" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">calculadora.luaraujo.com</a>
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">HTML</span>
-                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">CSS</span>
-                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">JavaScript</span>
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">HTML5</span>
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">CSS3</span>
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">JavaScript ES6</span>
                     </div>
-                </div>
+                </article>
 
                 <!-- Projeto 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
+                <article class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-code text-blue-600 text-2xl mr-4"></i>
                         <div>
-                            <h4 class="text-xl font-bold">Estruturas de Dados</h4>
-                            <p class="text-gray-600">Exercícios práticos</p>
+                            <h4 class="text-xl font-bold">Implementações de Estruturas de Dados em C</h4>
+                            <p class="text-gray-600">Exercícios práticos em C</p>
                         </div>
                     </div>
                     <p class="text-gray-700 mb-4">
-                        Implementações de estruturas básicas como listas, pilhas e filas em C.
-                        Parte do meu aprendizado na faculdade.
+                        Implementações em linguagem C de estruturas de dados fundamentais como listas encadeadas, pilhas, filas e árvores binárias.
+                        Desenvolvido como parte do meu aprendizado acadêmico para entender a alocação de memória, ponteiros e manipulação de dados de baixo nível.
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">C</span>
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Estruturas de Dados</span>
                         <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Algoritmos</span>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
         <!-- Contato -->
-        <section id="contact" class="mt-16">
+        <section id="contact" class="mt-16 mb-24">
             <h3 class="text-2xl font-bold mb-6">Contato</h3>
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <div class="mb-6 text-center">
                     <p class="text-gray-700">
-                        Sempre aberto a trocar conhecimento e aprender com outros desenvolvedores!
+                        Sempre aberto a novas conexões, oportunidades e trocas de conhecimento com outros desenvolvedores e profissionais da área de tecnologia!
                     </p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
-                        <h4 class="font-bold mb-4">Informações</h4>
+                        <h4 class="font-bold mb-4">Informações de Contato</h4>
                         <div class="space-y-4">
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-envelope text-blue-600"></i>
@@ -136,21 +160,21 @@
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-map-marker-alt text-red-600"></i>
-                                <span>Brasília/DF</span>
+                                <span>Brasília, Distrito Federal - Brasil</span>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="font-bold mb-4">Redes</h4>
+                        <h4 class="font-bold mb-4">Redes Sociais e Repositórios</h4>
                         <div class="space-y-4">
-                            <a href="https://linkedin.com/in/lucas-dórea-cardoso-771833112" 
-                               target="_blank"
+                            <a href="https://linkedin.com/in/lucas-dórea-cardoso-771833112"
+                               target="_blank" rel="noopener noreferrer"
                                class="flex items-center space-x-2 hover:text-blue-600">
                                 <i class="fab fa-linkedin"></i>
                                 <span>LinkedIn</span>
                             </a>
-                            <a href="https://github.com/Lucasdoreac" 
-                               target="_blank"
+                            <a href="https://github.com/Lucasdoreac"
+                               target="_blank" rel="noopener noreferrer"
                                class="flex items-center space-x-2 hover:text-gray-800">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
@@ -164,13 +188,13 @@
 
     <footer class="bg-gray-800 text-white py-8 mt-16">
         <div class="container mx-auto px-4 text-center">
-            <p>Estudante de Ciência da Computação | Em constante aprendizado</p>
+            <p>Lucas Dórea Cardoso - Estudante de Ciência da Computação | Em Constante Aprendizado</p>
             <p class="mt-2 text-sm text-gray-400">
-                Este site foi desenvolvido como parte do meu processo de aprendizado,
-                com auxílio de ferramentas de IA e mentoria de desenvolvedores mais experientes.
+                Este portfólio foi desenvolvido como parte do meu processo de aprendizado em desenvolvimento web,
+                com o apoio de ferramentas de IA e mentoria de desenvolvedores experientes.
             </p>
             <div class="mt-4">
-                <p>&copy; 2024 Lucas Dórea Cardoso</p>
+                <p>© 2024 Lucas Dórea Cardoso. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
