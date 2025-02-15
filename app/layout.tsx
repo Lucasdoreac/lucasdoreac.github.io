@@ -1,50 +1,27 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { ThemeProvider } from '@/components/theme-provider'
-
-const inter = Inter({ subsets: ['latin'] })
+import './globals.css';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Lucas Dórea | Sustainable Tech Developer',
-  description: 'Environmental Manager turned Computer Science enthusiast, creating eco-conscious technology solutions.',
-  keywords: ['sustainable tech', 'green computing', 'web development', 'environmental management'],
-  authors: [{ name: 'Lucas Dórea Cardoso' }],
-  openGraph: {
-    title: 'Lucas Dórea | Sustainable Tech Developer',
-    description: 'Environmental Manager turned Computer Science enthusiast, creating eco-conscious technology solutions.',
-    url: 'https://lucasdoreac.github.io',
-    siteName: 'Lucas Dórea Portfolio',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Lucas Dórea - Sustainable Tech Developer',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-}
+  title: 'Lucas Dórea Cardoso - Desenvolvedor de Software',
+  description: 'Portfólio pessoal de Lucas Dórea Cardoso, Desenvolvedor de Software e Especialista em Soluções Sustentáveis.',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-white dark:bg-primary text-primary dark:text-white`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+    <html lang="pt-BR">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+      </head>
+      <body className="bg-gray-100">
+        {children}
       </body>
     </html>
-  )
+  );
 }
