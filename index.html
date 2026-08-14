@@ -83,6 +83,18 @@ blockquote{
 }
 .tag.live{color:var(--polit);border-color:currentColor;background:transparent}
 .tag.wip{color:var(--class);border-color:currentColor;background:transparent}
+.tag.data{background:transparent;font-weight:500;font-variant-numeric:tabular-nums}
+.encerrado{
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  color:var(--fg-dim);border:1px solid var(--line);border-radius:99px;
+  padding:3px 9px;vertical-align:middle;margin-left:8px;
+}
+.acervo{
+  background:var(--bg-elev);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:var(--radius);padding:20px 22px;margin:24px 0 0;
+}
+.acervo p{margin:0;font-size:.95rem;color:var(--fg-dim);max-width:none}
+.acervo strong{color:var(--fg)}
 .card-links{display:flex;gap:14px;font-size:.87rem;font-weight:600}
 
 /* ---- wip ---- */
@@ -150,6 +162,14 @@ footer p{max-width:62ch}
       uma abstração teórica em algo que uma pessoa sem repertório acadêmico consiga usar sozinha, no celular,
       sem pedir licença a ninguém.
     </p>
+    <div class="acervo">
+      <p>
+        <strong>Isto é um acervo, não um mural do que estou fazendo esta semana.</strong>
+        São projetos construídos entre 2025 e 2026 — cada um traz a data do último trabalho.
+        Continuam no ar porque continuam servindo, não porque estejam em desenvolvimento ativo.
+        Meu trabalho corrente é outro e fica fora daqui.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -169,7 +189,7 @@ footer p{max-width:62ch}
         <p>Análise da demonização de práticas espirituais de matriz africana no Brasil, do Caso Evandro ao pânico
         satânico global. Cobre percepção pública, mecanismos de controle e resistência, perspectivas acadêmicas
         e depoimentos da comunidade.</p>
-        <div class="tags"><span class="tag">Pesquisa</span><span class="tag">HTML</span><span class="tag live">No ar</span></div>
+        <div class="tags"><span class="tag">Pesquisa</span><span class="tag">HTML</span><span class="tag live">No ar</span><span class="tag data">fev/2025</span></div>
         <div class="card-links">
           <a href="https://lucasdoreac.github.io/magia-negra-analysis/">Acessar →</a>
           <a href="https://github.com/Lucasdoreac/magia-negra-analysis">Código</a>
@@ -181,7 +201,7 @@ footer p{max-width:62ch}
         <p>Pesquisa em Processamento de Linguagem Natural sobre <em>dog whistles</em> — termos aparentemente
         inócuos que carregam significado oculto e atravessam a moderação automática porque não usam as palavras
         que os filtros procuram. Coleta via API oficial, redes de co-ocorrência e classificação de contexto.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag live">No ar</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag live">No ar</span><span class="tag data">fev/2025</span></div>
         <div class="card-links">
           <a href="https://lucasdoreac.github.io/reddit-language-analysis/">Acessar →</a>
           <a href="https://github.com/Lucasdoreac/reddit-language-analysis">Código</a>
@@ -206,7 +226,7 @@ footer p{max-width:62ch}
         <p>Perspectivas financeiras reais — salário, freelance, empreendedorismo — junto com reflexão sobre
         o custo ético do que você vai construir. A informação que estudante de classe média recebe em casa,
         escrita para quem não recebeu.</p>
-        <div class="tags"><span class="tag">Educação</span><span class="tag live">No ar</span></div>
+        <div class="tags"><span class="tag">Educação</span><span class="tag live">No ar</span><span class="tag data">mar/2025</span></div>
         <div class="card-links">
           <a href="https://lucasdoreac.github.io/guia-financeiro-etico-computacao/">Acessar →</a>
           <a href="https://github.com/Lucasdoreac/guia-financeiro-etico-computacao">Código</a>
@@ -217,7 +237,7 @@ footer p{max-width:62ch}
         <h3><a href="https://github.com/Lucasdoreac/teste-vocacional-computacao">Teste Vocacional para Computação</a></h3>
         <p>Orientação de carreira interativa e gratuita para calouros que não têm acesso a consultoria paga.
         Descobre qual área da TI combina com o perfil de quem responde.</p>
-        <div class="tags"><span class="tag">JavaScript</span><span class="tag live">No ar</span></div>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag live">No ar</span><span class="tag data">mar/2025</span></div>
         <div class="card-links">
           <a href="https://lucasdoreac.github.io/teste-vocacional-computacao/">Acessar →</a>
           <a href="https://github.com/Lucasdoreac/teste-vocacional-computacao">Código</a>
@@ -228,7 +248,7 @@ footer p{max-width:62ch}
         <h3><a href="https://github.com/Lucasdoreac/EcoGov">EcoGov</a></h3>
         <p>Central de monitoramento para prestação de contas pública. Dinheiro do povo devia ser auditável
         pelo povo — sem precisar de diploma em contabilidade para ler o relatório.</p>
-        <div class="tags"><span class="tag">Transparência</span><span class="tag wip">Em construção</span></div>
+        <div class="tags"><span class="tag">Transparência</span><span class="tag wip">Em construção</span><span class="tag data">mar/2026</span></div>
         <div class="card-links"><a href="https://github.com/Lucasdoreac/EcoGov">Código →</a></div>
       </article>
 
@@ -250,7 +270,7 @@ footer p{max-width:62ch}
         <p>Mapa de compasso político interativo feito <strong>para quem não tem letramento político</strong>.
         Atravessa as pautas históricas e as guerras culturais modernas com apoio de IA, narração em áudio e
         recursos de acessibilidade.</p>
-        <div class="tags"><span class="tag">TypeScript</span><span class="tag">Gemini</span><span class="tag">Acessibilidade</span></div>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">Gemini</span><span class="tag">Acessibilidade</span><span class="tag data">jun/2026</span></div>
         <div class="card-links"><a href="https://github.com/Lucasdoreac/guerra-cultural">Código →</a></div>
       </article>
 
@@ -258,7 +278,7 @@ footer p{max-width:62ch}
         <h3><a href="https://github.com/Lucasdoreac/guia-cultivo-cannabis">Guia de Cultivo Legal de Cannabis</a></h3>
         <p>Informação técnica sobre cultivo legal, em português. A guerra às drogas nunca foi sobre a planta —
         é sobre quem é preso por ela, e quem não é.</p>
-        <div class="tags"><span class="tag">Documentação</span><span class="tag live">No ar</span></div>
+        <div class="tags"><span class="tag">Documentação</span><span class="tag live">No ar</span><span class="tag data">out/2025</span></div>
         <div class="card-links">
           <a href="https://lucasdoreac.github.io/guia-cultivo-cannabis/">Acessar →</a>
           <a href="https://github.com/Lucasdoreac/guia-cultivo-cannabis">Código</a>
@@ -283,7 +303,7 @@ footer p{max-width:62ch}
         <p>Performance é velocidade bruta e métrica de visibilidade. Desempenho é chegar onde importa.
         Um protocolo e ecossistema construído sobre essa distinção — crítica prática à economia da atenção,
         com auditoria independente e infraestrutura fora da nuvem central.</p>
-        <div class="tags"><span class="tag">TypeScript</span><span class="tag">Monorepo</span></div>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">Monorepo</span><span class="tag data">mar/2026</span></div>
         <div class="card-links"><a href="https://github.com/Lucasdoreac/DNP">Código →</a></div>
       </article>
 
@@ -291,7 +311,7 @@ footer p{max-width:62ch}
         <h3><a href="https://github.com/Lucasdoreac/autoavaliacao-autossabotagem">Autoavaliação de Autossabotagem</a></h3>
         <p>50 perguntas, 9 áreas de avaliação, base em evidências científicas. Resultados em gráfico,
         recomendações e exportação em PDF. <strong>100% local — nenhum dado sai do seu navegador.</strong></p>
-        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Privacidade por design</span><span class="tag live">No ar</span></div>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Privacidade por design</span><span class="tag live">No ar</span><span class="tag data">mar/2025</span></div>
         <div class="card-links">
           <a href="https://lucasdoreac.github.io/autoavaliacao-autossabotagem/">Acessar →</a>
           <a href="https://github.com/Lucasdoreac/autoavaliacao-autossabotagem">Código</a>
@@ -303,7 +323,7 @@ footer p{max-width:62ch}
         <p>ARG no universo SCP sobre uma máquina que prevê você com 94,7% de precisão e conhece o que você
         nunca contou. Ficção sobre vigilância preditiva — e sobre o que é mais assustador que a vigilância:
         ela se importar.</p>
-        <div class="tags"><span class="tag">Narrativa</span><span class="tag">Remotion</span></div>
+        <div class="tags"><span class="tag">Narrativa</span><span class="tag">Remotion</span><span class="tag data">jan/2026</span></div>
         <div class="card-links"><a href="https://github.com/Lucasdoreac/o-terminal">Código →</a></div>
       </article>
 
@@ -315,25 +335,25 @@ footer p{max-width:62ch}
   <div class="wrap">
     <div class="axis-head">
       <span class="dot" style="background:var(--infra)"></span>
-      <h2>Infraestrutura soberana</h2>
+      <h2>Infraestrutura soberana <span class="encerrado">encerrado</span></h2>
     </div>
     <p class="axis-note">Nenhuma das ferramentas acima significa muito se a base rodar em servidor de outro dono.</p>
     <div class="grid">
 
       <article class="card">
         <h3>LUDOC — Orquestrador Soberano de Agentes</h3>
-        <p>Sistema de IA que roda local, com protocolos abertos (MCP, ACP, ADK). 20+ ferramentas autônomas,
-        validação de segurança com aprovação humana, deploy em Kubernetes, modelos que rodam em 8&nbsp;GB de RAM.
-        Órgãos públicos brasileiros não deveriam depender de IA de empresas americanas — isto é a prova de que dá
-        para não depender.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Kubernetes</span><span class="tag">MCP</span></div>
+        <p>Foi minha tentativa de provar que dá para rodar orquestração de agentes localmente, com protocolos
+        abertos, sem depender de nuvem estrangeira — partindo da ideia de que órgãos públicos brasileiros não
+        deveriam depender de IA de empresas americanas. <strong>Não é mais mantido</strong>, e o trabalho que
+        faço hoje nessa área seguiu outro caminho.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag data">até jun/2026</span></div>
       </article>
 
       <article class="card">
         <h3><a href="https://github.com/Lucasdoreac/Core-Forense-Secure-Ledger-">Core Forense Secure Ledger</a></h3>
         <p>Governança de dados e defesa contra sabotagem interna em bancos relacionais. Blueprint de
         conformidade e sincronismo de defesa.</p>
-        <div class="tags"><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span></div>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag data">jun/2026</span></div>
         <div class="card-links"><a href="https://github.com/Lucasdoreac/Core-Forense-Secure-Ledger-">Código →</a></div>
       </article>
 
