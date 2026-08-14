@@ -1,178 +1,399 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Dórea Cardoso - Estudante de Ciência da Computação</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucas Dórea Cardoso — Ferramentas de Conscientização</title>
+<meta name="description" content="Projetos abertos sobre raça, classe, gênero e alienação. Ferramentas para tornar visível o que a sociedade aprendeu a não enxergar.">
+<style>
+:root{
+  --bg:#faf8f5; --bg-elev:#ffffff; --fg:#16130f; --fg-dim:#5c544a;
+  --line:#e0d9ce; --accent:#a8321e; --accent-soft:#f2e4e0;
+  --race:#a8321e; --class:#8a6a12; --polit:#1f5c4a; --alien:#4a3a7a; --infra:#3a4a5c;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12100e; --bg-elev:#1b1815; --fg:#f0ebe4; --fg-dim:#a09488;
+    --line:#2e2924; --accent:#e8654a; --accent-soft:#2e1c18;
+    --race:#e8654a; --class:#d4a532; --polit:#4fc19c; --alien:#a08ee0; --infra:#7fa3c4;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12100e; --bg-elev:#1b1815; --fg:#f0ebe4; --fg-dim:#a09488;
+  --line:#2e2924; --accent:#e8654a; --accent-soft:#2e1c18;
+  --race:#e8654a; --class:#d4a532; --polit:#4fc19c; --alien:#a08ee0; --infra:#7fa3c4;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+/* ---- header ---- */
+header{padding:72px 0 48px;border-bottom:1px solid var(--line)}
+.kicker{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);margin:0 0 14px}
+h1{font-size:clamp(2rem,6vw,3.1rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.02em;font-weight:800}
+.role{font-size:clamp(1.05rem,2.6vw,1.3rem);color:var(--accent);font-weight:600;margin:0 0 24px}
+blockquote{
+  margin:0 0 28px;padding:16px 0 16px 20px;border-left:3px solid var(--accent);
+  color:var(--fg-dim);font-size:1.02rem;max-width:62ch;
+}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{
+  display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:99px;
+  background:var(--bg-elev);color:var(--fg);font-size:.9rem;font-weight:600;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{color:#fff;opacity:.88}
+
+/* ---- thesis ---- */
+.thesis{padding:48px 0;border-bottom:1px solid var(--line)}
+.thesis h2{font-size:1.45rem;margin:0 0 16px;letter-spacing:-.01em}
+.thesis p{max-width:66ch;margin:0 0 14px}
+.thesis .names{color:var(--fg-dim);font-size:.96rem}
+
+/* ---- sections ---- */
+.axis{padding:44px 0;border-bottom:1px solid var(--line)}
+.axis-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.axis h2{font-size:1.35rem;margin:0;letter-spacing:-.01em}
+.axis-note{color:var(--fg-dim);font-size:.93rem;margin:0 0 24px;max-width:62ch}
+.dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto;align-self:center}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{
+  background:var(--bg-elev);border:1px solid var(--line);border-left:4px solid var(--axis,var(--accent));
+  border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;
+}
+.card h3{margin:0 0 4px;font-size:1.08rem;letter-spacing:-.01em}
+.card h3 a{color:var(--fg)}
+.card h3 a:hover{color:var(--axis,var(--accent))}
+.card p{margin:0 0 14px;font-size:.94rem;color:var(--fg-dim);flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.tag{
+  font-size:.73rem;padding:3px 9px;border-radius:99px;
+  background:var(--accent-soft);color:var(--fg-dim);border:1px solid var(--line);
+  font-weight:600;letter-spacing:.02em;
+}
+.tag.live{color:var(--polit);border-color:currentColor;background:transparent}
+.tag.wip{color:var(--class);border-color:currentColor;background:transparent}
+.card-links{display:flex;gap:14px;font-size:.87rem;font-weight:600}
+
+/* ---- wip ---- */
+.wip-box{
+  background:var(--bg-elev);border:1px dashed var(--line);border-radius:var(--radius);padding:22px;
+}
+.wip-box ul{margin:14px 0 0;padding-left:20px}
+.wip-box li{margin-bottom:12px;font-size:.94rem}
+.wip-box li strong{color:var(--fg)}
+
+/* ---- principles ---- */
+.princ ul{list-style:none;padding:0;margin:0;max-width:64ch}
+.princ li{padding:9px 0 9px 30px;position:relative;font-size:.96rem;border-bottom:1px solid var(--line)}
+.princ li:last-child{border-bottom:0}
+.princ li::before{position:absolute;left:0;top:9px;font-weight:700}
+.princ li.yes::before{content:"✓";color:var(--polit)}
+.princ li.no::before{content:"✕";color:var(--race)}
+
+/* ---- footer ---- */
+footer{padding:44px 0 64px;color:var(--fg-dim);font-size:.92rem}
+footer p{max-width:62ch}
+.closing{
+  border-left:3px solid var(--accent);padding:14px 0 14px 20px;margin:28px 0 0;
+  font-style:italic;color:var(--fg);max-width:60ch;
+}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin:24px 0 0;padding-top:20px;border-top:1px solid var(--line)}
+.stat b{display:block;font-size:1.45rem;color:var(--fg);line-height:1.2}
+.stat span{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+</style>
 </head>
-<body class="bg-gray-100">
-    <nav class="bg-gray-800 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-bold">Lucas Dórea Cardoso</a>
-            <div class="space-x-4">
-                <a href="#about" class="hover:text-gray-300">Sobre</a>
-                <a href="#learning" class="hover:text-gray-300">Aprendizado</a>
-                <a href="#projects" class="hover:text-gray-300">Projetos</a>
-                <a href="#contact" class="hover:text-gray-300">Contato</a>
-            </div>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">Lucas Dórea Cardoso · eludoc</p>
+    <h1>Ferramentas para enxergar a estrutura.</h1>
+    <p class="role">Proletário da tecnologia · Ciência da Computação (UDF)</p>
+    <blockquote>
+      Não entrei na computação por vocação nem por privilégio. Entrei porque a onda de automação estava
+      chegando e eu preferi aprender a nadar. O que descobri no caminho é que a mesma ferramenta que me
+      tira o emprego pode ser usada para explicar, a quem nunca teve acesso, por que ele está sendo tirado.
+    </blockquote>
+    <div class="links">
+      <a class="btn btn-primary" href="#projetos">Ver os projetos</a>
+      <a class="btn" href="https://github.com/Lucasdoreac">GitHub</a>
+      <a class="btn" href="https://github.com/Lucasdoreac?tab=repositories">Todos os repositórios</a>
+    </div>
+  </div>
+</header>
+
+<section class="thesis">
+  <div class="wrap">
+    <h2>O fio que costura tudo</h2>
+    <p>
+      Meus projetos partem de uma pergunta só: <strong>o que faz uma pessoa não conseguir enxergar
+      a estrutura que a organiza?</strong>
+    </p>
+    <p class="names">
+      Marx chamou isso de alienação. Du Bois chamou de dupla consciência. Fanon mostrou como o colonialismo
+      entra na cabeça antes de entrar no território. Lélia Gonzalez mostrou que, no Brasil, racismo e sexismo
+      não são camadas separadas — são a mesma engrenagem. Crenshaw deu nome ao ponto onde tudo se cruza.
+    </p>
+    <p>
+      Eu construo ferramentas. Sites, questionários, análises, mapas interativos. Cada uma tenta transformar
+      uma abstração teórica em algo que uma pessoa sem repertório acadêmico consiga usar sozinha, no celular,
+      sem pedir licença a ninguém.
+    </p>
+  </div>
+</section>
+
+<div id="projetos"></div>
+
+<section class="axis" style="--axis:var(--race)">
+  <div class="wrap">
+    <div class="axis-head">
+      <span class="dot" style="background:var(--race)"></span>
+      <h2>Raça, religião e pânico moral</h2>
+    </div>
+    <p class="axis-note">Como sociedades constroem o inimigo interno — e quem paga a conta quando ele é construído.</p>
+    <div class="grid">
+
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/magia-negra-analysis">Racismo Religioso e Pânico Satânico</a></h3>
+        <p>Análise da demonização de práticas espirituais de matriz africana no Brasil, do Caso Evandro ao pânico
+        satânico global. Cobre percepção pública, mecanismos de controle e resistência, perspectivas acadêmicas
+        e depoimentos da comunidade.</p>
+        <div class="tags"><span class="tag">Pesquisa</span><span class="tag">HTML</span><span class="tag live">No ar</span></div>
+        <div class="card-links">
+          <a href="https://lucasdoreac.github.io/magia-negra-analysis/">Acessar →</a>
+          <a href="https://github.com/Lucasdoreac/magia-negra-analysis">Código</a>
         </div>
-    </nav>
+      </article>
 
-    <main class="container mx-auto mt-8 px-4">
-        <!-- Hero Section -->
-        <section id="about" class="text-center py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg shadow-lg">
-            <h2 class="text-4xl font-bold mb-4">Estudante & Entusiasta de Tecnologia</h2>
-            <p class="text-xl mb-8">Aprendendo e crescendo na jornada do desenvolvimento de software</p>
-            <div class="max-w-2xl mx-auto text-left bg-white/10 p-6 rounded-lg">
-                <p class="mb-4">👋 Olá! Sou estudante do 3º semestre de Ciência da Computação no UDF Centro Universitário.</p>
-                <p class="mb-4">🌱 Estou no começo da minha jornada em tecnologia, aprendendo:</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Fundamentos de Programação (C, Java, Python)</li>
-                    <li>Estruturas de Dados</li>
-                    <li>Lógica de Programação</li>
-                </ul>
-                <p>🤖 Uso ferramentas de IA para auxiliar meu aprendizado e desenvolvimento</p>
-            </div>
-        </section>
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/reddit-language-analysis">Reddit Language Analysis</a></h3>
+        <p>Pesquisa em Processamento de Linguagem Natural sobre termos codificados e padrões usados para
+        disfarçar discurso de ódio em comunidades online. Coleta automatizada, análise estatística e visualização.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Jupyter</span></div>
+        <div class="card-links"><a href="https://github.com/Lucasdoreac/reddit-language-analysis">Código →</a></div>
+      </article>
 
-        <!-- Learning Journey -->
-        <section id="learning" class="mt-16">
-            <h3 class="text-2xl font-bold mb-6">Minha Jornada de Aprendizado</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h4 class="font-bold mb-4 flex items-center">
-                        <i class="fas fa-book-open text-blue-600 mr-2"></i>
-                        Atualmente Estudando
-                    </h4>
-                    <ul class="space-y-2">
-                        <li>• Algoritmos e Estruturas de Dados</li>
-                        <li>• Programação Orientada a Objetos</li>
-                        <li>• Banco de Dados</li>
-                        <li>• Conceitos de Redes</li>
-                    </ul>
-                </div>
+    </div>
+  </div>
+</section>
 
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h4 class="font-bold mb-4 flex items-center">
-                        <i class="fas fa-tools text-green-600 mr-2"></i>
-                        Ferramentas de Apoio
-                    </h4>
-                    <ul class="space-y-2">
-                        <li>• IDEs & Editores de Código</li>
-                        <li>• Ferramentas de IA (Claude, ChatGPT, MCP)</li>
-                        <li>• Recursos online & documentação</li>
-                        <li>• Comunidades de desenvolvedores</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<section class="axis" style="--axis:var(--class)">
+  <div class="wrap">
+    <div class="axis-head">
+      <span class="dot" style="background:var(--class)"></span>
+      <h2>Classe, trabalho e acesso</h2>
+    </div>
+    <p class="axis-note">Feito para quem é o primeiro da família a chegar aqui e não tem a quem perguntar.</p>
+    <div class="grid">
 
-        <!-- Projetos de Estudo -->
-        <section id="projects" class="mt-16">
-            <h3 class="text-2xl font-bold mb-6">Projetos de Aprendizado</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Projeto 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-calculator text-purple-600 text-2xl mr-4"></i>
-                        <div>
-                            <h4 class="text-xl font-bold">Calculadora Web</h4>
-                            <p class="text-gray-600">Projeto de estudo</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Meu primeiro projeto web, desenvolvido para aprender os fundamentos de HTML, CSS e JavaScript.
-                        Disponível em: <a href="https://calculadora.luaraujo.com" class="text-blue-600 hover:underline">calculadora.luaraujo.com</a>
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">HTML</span>
-                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">CSS</span>
-                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">JavaScript</span>
-                    </div>
-                </div>
-
-                <!-- Projeto 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-code text-blue-600 text-2xl mr-4"></i>
-                        <div>
-                            <h4 class="text-xl font-bold">Estruturas de Dados</h4>
-                            <p class="text-gray-600">Exercícios práticos</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        Implementações de estruturas básicas como listas, pilhas e filas em C.
-                        Parte do meu aprendizado na faculdade.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">C</span>
-                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Algoritmos</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contato -->
-        <section id="contact" class="mt-16">
-            <h3 class="text-2xl font-bold mb-6">Contato</h3>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <div class="mb-6 text-center">
-                    <p class="text-gray-700">
-                        Sempre aberto a trocar conhecimento e aprender com outros desenvolvedores!
-                    </p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="font-bold mb-4">Informações</h4>
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-envelope text-blue-600"></i>
-                                <a href="mailto:lucasdorea.c@outlook.com" class="hover:text-blue-600">
-                                    lucasdorea.c@outlook.com
-                                </a>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-map-marker-alt text-red-600"></i>
-                                <span>Brasília/DF</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold mb-4">Redes</h4>
-                        <div class="space-y-4">
-                            <a href="https://linkedin.com/in/lucas-dórea-cardoso-771833112" 
-                               target="_blank"
-                               class="flex items-center space-x-2 hover:text-blue-600">
-                                <i class="fab fa-linkedin"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://github.com/Lucasdoreac" 
-                               target="_blank"
-                               class="flex items-center space-x-2 hover:text-gray-800">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-800 text-white py-8 mt-16">
-        <div class="container mx-auto px-4 text-center">
-            <p>Estudante de Ciência da Computação | Em constante aprendizado</p>
-            <p class="mt-2 text-sm text-gray-400">
-                Este site foi desenvolvido como parte do meu processo de aprendizado,
-                com auxílio de ferramentas de IA e mentoria de desenvolvedores mais experientes.
-            </p>
-            <div class="mt-4">
-                <p>&copy; 2024 Lucas Dórea Cardoso</p>
-            </div>
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/guia-financeiro-etico-computacao">Guia Financeiro e Ético para Computação</a></h3>
+        <p>Perspectivas financeiras reais — salário, freelance, empreendedorismo — junto com reflexão sobre
+        o custo ético do que você vai construir. A informação que estudante de classe média recebe em casa,
+        escrita para quem não recebeu.</p>
+        <div class="tags"><span class="tag">Educação</span><span class="tag live">No ar</span></div>
+        <div class="card-links">
+          <a href="https://lucasdoreac.github.io/guia-financeiro-etico-computacao/">Acessar →</a>
+          <a href="https://github.com/Lucasdoreac/guia-financeiro-etico-computacao">Código</a>
         </div>
-    </footer>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/teste-vocacional-computacao">Teste Vocacional para Computação</a></h3>
+        <p>Orientação de carreira interativa e gratuita para calouros que não têm acesso a consultoria paga.
+        Descobre qual área da TI combina com o perfil de quem responde.</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag live">No ar</span></div>
+        <div class="card-links">
+          <a href="https://lucasdoreac.github.io/teste-vocacional-computacao/">Acessar →</a>
+          <a href="https://github.com/Lucasdoreac/teste-vocacional-computacao">Código</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/EcoGov">EcoGov</a></h3>
+        <p>Central de monitoramento para prestação de contas pública. Dinheiro do povo devia ser auditável
+        pelo povo — sem precisar de diploma em contabilidade para ler o relatório.</p>
+        <div class="tags"><span class="tag">Transparência</span><span class="tag wip">Em construção</span></div>
+        <div class="card-links"><a href="https://github.com/Lucasdoreac/EcoGov">Código →</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="axis" style="--axis:var(--polit)">
+  <div class="wrap">
+    <div class="axis-head">
+      <span class="dot" style="background:var(--polit)"></span>
+      <h2>Letramento político e ideologia</h2>
+    </div>
+    <p class="axis-note">Política sem complicação. Quem não entende o mapa não escolhe o caminho.</p>
+    <div class="grid">
+
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/guerra-cultural">Bússola Comunitária</a></h3>
+        <p>Mapa de compasso político interativo feito <strong>para quem não tem letramento político</strong>.
+        Atravessa as pautas históricas e as guerras culturais modernas com apoio de IA, narração em áudio e
+        recursos de acessibilidade.</p>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">Gemini</span><span class="tag">Acessibilidade</span></div>
+        <div class="card-links"><a href="https://github.com/Lucasdoreac/guerra-cultural">Código →</a></div>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/guia-cultivo-cannabis">Guia de Cultivo Legal de Cannabis</a></h3>
+        <p>Informação técnica sobre cultivo legal, em português. A guerra às drogas nunca foi sobre a planta —
+        é sobre quem é preso por ela, e quem não é.</p>
+        <div class="tags"><span class="tag">Documentação</span><span class="tag live">No ar</span></div>
+        <div class="card-links">
+          <a href="https://lucasdoreac.github.io/guia-cultivo-cannabis/">Acessar →</a>
+          <a href="https://github.com/Lucasdoreac/guia-cultivo-cannabis">Código</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="axis" style="--axis:var(--alien)">
+  <div class="wrap">
+    <div class="axis-head">
+      <span class="dot" style="background:var(--alien)"></span>
+      <h2>Alienação e consciência</h2>
+    </div>
+    <p class="axis-note">O que a métrica, a vigilância e a autoimagem fazem com quem está dentro delas.</p>
+    <div class="grid">
+
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/DNP">DNP — Desempenho Não é Performance</a></h3>
+        <p>Performance é velocidade bruta e métrica de visibilidade. Desempenho é chegar onde importa.
+        Um protocolo e ecossistema construído sobre essa distinção — crítica prática à economia da atenção,
+        com auditoria independente e infraestrutura fora da nuvem central.</p>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">Monorepo</span></div>
+        <div class="card-links"><a href="https://github.com/Lucasdoreac/DNP">Código →</a></div>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/autoavaliacao-autossabotagem">Autoavaliação de Autossabotagem</a></h3>
+        <p>50 perguntas, 9 áreas de avaliação, base em evidências científicas. Resultados em gráfico,
+        recomendações e exportação em PDF. <strong>100% local — nenhum dado sai do seu navegador.</strong></p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Privacidade por design</span><span class="tag live">No ar</span></div>
+        <div class="card-links">
+          <a href="https://lucasdoreac.github.io/autoavaliacao-autossabotagem/">Acessar →</a>
+          <a href="https://github.com/Lucasdoreac/autoavaliacao-autossabotagem">Código</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/o-terminal">O-Terminal</a></h3>
+        <p>ARG no universo SCP sobre uma máquina que prevê você com 94,7% de precisão e conhece o que você
+        nunca contou. Ficção sobre vigilância preditiva — e sobre o que é mais assustador que a vigilância:
+        ela se importar.</p>
+        <div class="tags"><span class="tag">Narrativa</span><span class="tag">Remotion</span></div>
+        <div class="card-links"><a href="https://github.com/Lucasdoreac/o-terminal">Código →</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="axis" style="--axis:var(--infra)">
+  <div class="wrap">
+    <div class="axis-head">
+      <span class="dot" style="background:var(--infra)"></span>
+      <h2>Infraestrutura soberana</h2>
+    </div>
+    <p class="axis-note">Nenhuma das ferramentas acima significa muito se a base rodar em servidor de outro dono.</p>
+    <div class="grid">
+
+      <article class="card">
+        <h3>LUDOC — Orquestrador Soberano de Agentes</h3>
+        <p>Sistema de IA que roda local, com protocolos abertos (MCP, ACP, ADK). 20+ ferramentas autônomas,
+        validação de segurança com aprovação humana, deploy em Kubernetes, modelos que rodam em 8&nbsp;GB de RAM.
+        Órgãos públicos brasileiros não deveriam depender de IA de empresas americanas — isto é a prova de que dá
+        para não depender.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Kubernetes</span><span class="tag">MCP</span></div>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://github.com/Lucasdoreac/Core-Forense-Secure-Ledger-">Core Forense Secure Ledger</a></h3>
+        <p>Governança de dados e defesa contra sabotagem interna em bancos relacionais. Blueprint de
+        conformidade e sincronismo de defesa.</p>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span></div>
+        <div class="card-links"><a href="https://github.com/Lucasdoreac/Core-Forense-Secure-Ledger-">Código →</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="axis">
+  <div class="wrap">
+    <div class="axis-head"><h2>Em construção — assumindo publicamente</h2></div>
+    <div class="wip-box">
+      <p style="margin:0;color:var(--fg-dim);font-size:.94rem">
+        Dois projetos que são o centro do que eu quero fazer e ainda estão vazios. Registro aqui para me cobrar.
+      </p>
+      <ul>
+        <li><strong>Alfabetização Emocional em Lares Tradicionais</strong> — como a estrutura familiar patriarcal
+        produz analfabetismo afetivo, e o que fazer com isso.</li>
+        <li><strong>Questionário de Mapeamento de Perspectiva</strong> — não é teste e não há resposta errada:
+        mapeia com empatia como cada pessoa processa a sobrecarga informacional do mundo atual.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="axis princ">
+  <div class="wrap">
+    <div class="axis-head"><h2>Princípios de trabalho</h2></div>
+    <p class="axis-note">Minhas ferramentas existem para aumentar autonomia, não para cortar quadro.</p>
+    <ul>
+      <li class="yes">Automatizo o <strong>trabalho repetitivo</strong>, não a <strong>experiência humana</strong>.</li>
+      <li class="yes">Entrego algo que funciona e que você entende como manter sem mim.</li>
+      <li class="yes">Sou honesto sobre o que a IA faz e o que ela não faz.</li>
+      <li class="no">Não trabalho em projeto cujo objetivo seja puramente reduzir quadro.</li>
+      <li class="no">Não construo sistema de vigilância ou opressão — meu código é para libertar.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2 style="font-size:1.35rem;margin:0 0 12px;color:var(--fg)">Contato</h2>
+    <p>
+      Aberto a conversa com quem é <strong>trabalhador</strong> e quer entender o que a IA está fazendo com o
+      seu ofício; quem <strong>empreende</strong> e quer modernizar sem demitir; quem está no
+      <strong>serviço público</strong> e precisa de soberania tecnológica; e quem tem <strong>experiência</strong>
+      e quer me dar conselho honesto.
+    </p>
+    <p style="margin-top:14px">
+      <a href="https://github.com/Lucasdoreac/Lucasdoreac/issues">Abrir uma issue</a> ·
+      <a href="https://github.com/Lucasdoreac">github.com/Lucasdoreac</a>
+    </p>
+
+    <div class="stats">
+      <div class="stat"><b>167</b><span>projetos próprios</span></div>
+      <div class="stat"><b>11</b><span>em destaque</span></div>
+      <div class="stat"><b>6</b><span>no ar agora</span></div>
+    </div>
+
+    <p class="closing">
+      Transparência é soberania. Um trabalhador que aprende a programar tem o dever de usar isso para
+      empoderar outros trabalhadores — não para substituí-los.
+    </p>
+  </div>
+</footer>
+
 </body>
 </html>
